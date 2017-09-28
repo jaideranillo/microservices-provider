@@ -19,5 +19,5 @@ logging:
 
 turbine:
   aggregator:
-    clusterConfig: microservices
+    clusterConfig: comic-service
   appConfig: comic-service
