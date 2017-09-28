@@ -8,6 +8,20 @@ logging:
     org.springframework.cloud: 'DEBUG'
     org.springframework.web: 'INFO'
     com.microservices.scn: 'DEBUG'
+
+management:
+  security:
+    enabled: false
+
+zuul:
+  prefix: /api
+  routes:
+    writer-service:
+      path: /writer/**
+      serviceId: writer-service
+    comic-service:
+      path: /comic/**
+      serviceId: comic-service
  
 # Discovery Server
 eureka:
