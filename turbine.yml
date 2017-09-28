@@ -1,0 +1,23 @@
+# HTTP 
+info:
+  component: turbine
+
+server:
+  port: ${TURBINE_PORT:3434}
+
+management:
+  security:
+    enabled: false
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    org.springframework.web: 'INFO'
+    com.microservices.scn: 'DEBUG'
+
+turbine:
+  aggregator:
+    clusterConfig: microservices
+  appConfig: comic-service

@@ -1,0 +1,25 @@
+# HTTP
+server:
+  port: ${PORT:5555}
+
+spring:
+  application:
+    name: writer-service
+
+management:
+  security:
+    enabled: false
+
+# Discovery Server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'INFO'
+    org.springframework.web: 'INFO'
+    com.microservices.scn: 'DEBUG'
